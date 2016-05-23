@@ -5,5 +5,3 @@
 gradle配置
 
 
-dependenci
-
