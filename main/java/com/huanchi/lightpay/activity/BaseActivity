@@ -1,0 +1,17 @@
+import android.app.Activity;
+
+public class BaseActivity extends Activity{
+
+    abstract class Callback<T> extends NetHandler<T> {
+        @Override
+        public void toast(String message) {
+            Toast.makeText(BaseActivity.this, message, Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onExcept(Exception e) {
+            super.onExcept(e);
+            Toast.makeText(LPBaseActivity.this, "网络连接失败", Toast.LENGTH_SHORT).show();
+        }
+    }
+}
